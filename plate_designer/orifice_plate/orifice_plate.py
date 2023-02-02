@@ -37,7 +37,7 @@ class OrificePlate:
         fluid_viscosity,
         Reynolds,
         edge_type="Bordo reto",
-        tap_type="Tap de canto") -> None:
+        tap_type="Tap de canto"):
         """
         Construtor da classe OrificePlate.
 
@@ -62,7 +62,7 @@ class OrificePlate:
         self.downstream_pressure_tap_location = 0.0
         self.upstream_pressure_tap_location = 0.0
         
-    def orifice_area(self) -> float :
+    def orifice_area(self):
         """
         Calcula a área de um orifício.
         
@@ -73,7 +73,7 @@ class OrificePlate:
         """
         return (self.orifice_diameter / 2)**2 * np.pi
     
-    def diameter_ratio(self) -> float :
+    def diameter_ratio(self):
         """
         Calcula a relação entre o diâmetro do orifício e o diâmetro do tubo.
         
@@ -84,7 +84,7 @@ class OrificePlate:
         """
         return self.orifice_diameter / self.pipe_diameter
     
-    def orifice_coefficient(self) -> (float | None):
+    def orifice_coefficient(self):
         """
         Calcula o coeficiente de orifício, considerando os tipos de bordas e tipos de toques.
         
@@ -108,7 +108,7 @@ class OrificePlate:
             return None
         return Cd
 
-    def tap_coefficient(self) -> None :
+    def tap_coefficient(self):
         """
         Este método calcula e define a localização do ponto de medida de pressão com base no tipo de ponto de medida.
         
@@ -130,7 +130,7 @@ class OrificePlate:
             self.upstream_pressure_tap_location = self.pipe_diameter
             self.downstream_pressure_tap_location = self.pipe_diameter / 2
 
-    def pipe_flow_rate(self) -> float :
+    def pipe_flow_rate(self):
         """
         Este método calcula a vazão de escoamento na tubulação usando o coeficiente de orifício, 
         a pressão diferencial, a densidade do fluido e a área do orifício.
@@ -142,7 +142,7 @@ class OrificePlate:
         """
         return self.orifice_coefficient() * math.sqrt(2 * self.differential_pressure * self.fluid_density) * self.orifice_area()
     
-    def pipe_flow_rate(self, input_pressure) -> float :
+    def pipe_flow_rate(self, input_pressure):
         """
         Este método calcula a vazão de escoamento na tubulação usando o coeficiente de orifício,
         a pressão diferencial, a densidade do fluido e a área do orifício.

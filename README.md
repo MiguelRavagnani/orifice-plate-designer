@@ -45,3 +45,15 @@ root/
 |-- main.py
 requirements.txt
 ```
+
+## Detalhamento do código
+
+Referências principais
+
+Cálculo de coeficiente de descarga:
+
+[FLUID MECHANICS](http://ftp.demec.ufpr.br/disciplinas/TM240/Marchi/Bibliografia/White_2011_7ed_Fluid-Mechanics.pdf)
+
+Tipos de tap e posicionamento relativo ao diâmetro interno da tubulação:
+
+[Orifice Plate Taps](https://forumautomation.com/t/orifice-plate-taps/4982)
